@@ -927,6 +927,7 @@
 
     <div class="container">
         <h1>すずき写真事務所<br>バースデー/アニバーサリー
+            <div class="info-text">こちらのフォームは"公式LINEから"でのみ<br>送ることができます。</div>
         </h1>
         <div class="label">お客様名<span class="required">必須</span></div>
         <input type="text" id="name" placeholder="お名前を入力してください" oninput="saveInput('name')">
@@ -1158,6 +1159,19 @@
                     });
                 }
             });
+        });
+
+        window.addEventListener('DOMContentLoaded', function () {
+            const ua = navigator.userAgent.toLowerCase();
+            const isLine = ua.includes("line");
+            const isMobile = ua.includes("iphone") || ua.includes("android");
+
+            if (isLine && isMobile) {
+                const infoText = document.querySelector('.info-text');
+                if (infoText) {
+                    infoText.style.display = 'none';
+                }
+            }
         });
 
         function formatDateTime(dateTimeString) {
