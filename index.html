@@ -120,8 +120,42 @@
 
         .label {
             display: block;
-            margin-top: 3px;
-            /* ← 追加 */
+            margin-top: 10px;
+            /* ← ここを変更 */
+            margin-bottom: 10px;
+            padding: 3px;
+            font-weight: 600;
+            background-color: #a8b9a7;
+            color: white;
+            border-radius: 6px;
+            font-size: 18px;
+            text-align: center;
+            text-indent: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .labelhidarizurasi {
+            display: block;
+            margin-top: 10px;
+            /* ← ここを変更 */
+            margin-bottom: 10px;
+            padding: 3px;
+            font-weight: 600;
+            background-color: #a8b9a7;
+            color: white;
+            border-radius: 6px;
+            font-size: 18px;
+            text-align: center;
+            text-indent: 0px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .labelkakikukeko {
+            display: block;
+            margin-top: 10px;
+            /* ← ここを変更 */
             margin-bottom: 10px;
             padding: 3px;
             font-weight: 600;
@@ -177,7 +211,7 @@
         textarea {
             width: 100%;
             padding: 12px;
-            margin-bottom: 20px;
+            margin-bottom: 3px;
             border: 1px solid #ccc;
             border-radius: 6px;
             box-sizing: border-box;
@@ -691,6 +725,8 @@
             width: 100%;
             padding: 15px;
             font-size: 18px;
+            font-weight: bold;
+            /* ← これを追加 */
             background-color: #a8b9a7;
         }
 
@@ -932,9 +968,7 @@
         <div class="label">電話番号<span class="required">必須</span></div>
         <input type="tel" id="phone" placeholder="電話番号を入力してください" oninput="saveInput('phone')">
 
-        <div class="highlight-background">
-            <div class="kibounitizi">撮影希望日<span class="required">必須</span></div>
-        </div>
+        <div class="label">撮影希望日<span class="required">必須</span></div>
 
         <!-- カスタム placeholder 表示用 -->
         <div class="datetime-wrapper" style="text-align: center;">
@@ -949,9 +983,7 @@
             <button type="button" id="sankibou1" onclick="selectkibou1(this)">相談したい</button>
         </div>
 
-        <div class="highlight-background">
-            <span class="kibounitizi">第2希望日<span class="required">必須</span></span>
-        </div>
+        <div class="label">第2希望日<span class="required">必須</span></div>
 
         <!-- カスタム placeholder 表示用 -->
         <div class="datetime-wrapper" style="text-align: center;">
@@ -966,9 +998,7 @@
             <button type="button" id="sankibou2" onclick="selectkibou2(this)">相談したい</button>
         </div>
 
-        <div class="highlight-background">
-            <span class="kibounitizi">第3希望日(任意)</span>
-        </div>
+        <div class="labelhidarizurasi">第3希望日</div>
 
         <!-- カスタム placeholder 表示用 -->
         <div class="datetime-wrapper" style="text-align: center;">
@@ -1002,10 +1032,7 @@
             <textarea id="ziyuusonota" placeholder="撮影内容をご記入ください"></textarea>
         </div>
 
-        <div class="highlight-background">
-            <div class="kibounitizi">お子様のお誕生日 or 予定日<span class="required">必須</span></span></div>
-        </div>
-
+        <div class="label">お子様のお誕生日 or 予定日<span class="required">必須</span></div>
         <!-- カスタム placeholder 表示用 -->
         <div class="datetime-wrapper" style="text-align: center;">
             <span class="placeholder" id="placeholder4">⇩タップして日時を入力⇩</span>
@@ -1036,24 +1063,24 @@
         <div class="info-text">【二人目以降】</div>
         <input type="text" id="mugwortmainkid2" placeholder="ご兄弟のお名前・性別・年齢をご記入ください">
 
-        <div class="labelContent">撮影に参加される方の人数と続柄</div>
+        <div class="labelhidarizurasi">撮影に参加される方の人数と続柄</div>
         <input type="text" id="mugwortshrinename" placeholder="例:3人（父、母、姉）">
 
-        <div class="labelContent">生花撮影ご希望の有無<span class="required">必須</span></div>
+        <div class="label">生花撮影ご希望の有無<span class="required">必須</span></div>
         <div class="kimono-buttons">
             <button type="button" onclick="selectkimono(this)">有り</button>
             <button type="button" onclick="selectkimono(this)">無し</button>
             <button type="button" onclick="selectkimono(this)">検討中</button>
         </div>
 
-        <div class="labelContent">ヘアメイクご希望の有無<span class="required">必須</span></div>
+        <div class="label">ヘアメイクご希望の有無<span class="required">必須</span></div>
         <div class="hairmakeup-buttons">
             <button type="button" onclick="selecthairmakeup(this)">有り</button>
             <button type="button" onclick="selecthairmakeup(this)">無し</button>
             <button type="button" onclick="selecthairmakeup(this)">検討中</button>
         </div>
 
-        <div class="labelContent">ご質問/ご相談</div>
+        <div class="labelhidarizurasi">ご質問/ご相談</div>
         <textarea id="message" rows="4" placeholder="ご質問/ご相談を入力してください"></textarea>
 
         <button class="submit-button" onclick="submitForm()" div id="section-message">送信</button>
